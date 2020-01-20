@@ -1,0 +1,54 @@
+﻿@page
+@model AcoesWeb.Pages.Status.EditModel
+@{
+    ViewData["Title"] = "Editar Status";
+}
+
+<div>
+	<div>
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal-title"><strong>Editar Status</strong></h3>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-4 item_img">
+						<img src=" " class="img-responsive">
+					</div>
+					<div class="col-md-8 item_content">
+						<form method="post">
+							<h4>
+								<span>Atualize os dados do status !!!</span>
+							</h4>
+							<div class="container">
+								<div class="row">
+									<div class="col-md-4">
+										<div class="panel">
+											<div class="panel-body">
+												<div class="col-md-12" style="margin-top:15px;">
+													<input asp-for="status.Id" type="hidden" />
+													<label asp-for="status.Nome" style="font-weight:bold;"></label>
+													<input type='text' class='form-control' asp-for="status.Nome" />
+													<span class="alert-danger" asp-validation-for="status.Nome"></span>
+												</div>
+												<div class="text-center col-md-12" style="margin-top:35px;">
+													<button class="btn btn-primary btn-sx" type="submit">
+														<i class="glyphicon glyphicon-edit" style="vertical-align:text-bottom"></i> Editar Status
+													</button>
+													<a class="btn btn-success btn-sx" asp-page="/Status/Index">
+														<i class="glyphicon glyphicon-backward"></i> Lista De Status
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

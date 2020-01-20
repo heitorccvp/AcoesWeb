@@ -1,0 +1,77 @@
+﻿@page
+@model AcoesWeb.Pages.Gondolas.AddModel
+@{
+    ViewData["Title"] = "Add";
+}
+
+<div>
+	<div>
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal-title"><strong>Nova Gondola</strong></h3>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-4 item_img img-responsive glyphicon glyphicon-shopping-cart">
+
+					</div>
+					<div class="col-md-8 item_content">
+						<form method="post">
+							<h4>
+								<span>Informe os dados da Gondola!!!</span>
+							</h4>
+							<div class="container">
+								<div class="row">
+									<div class="col-md-4">
+										<div class="panel">
+											<div class="panel-body">
+												<div class="col-md-12" style="margin-top:15px;">
+													<label asp-for="gondola.nome" style="font-weight:bold;"></label>
+													<input type='text' class='form-control' asp-for="gondola.nome" />
+													<span class="alert-danger" asp-validation-for="gondola.nome"></span>
+												</div>
+												<div class="col-md-12" style="margin-top:15px;">
+													<label class="control-label">Farmacia</label>
+													<select asp-for="gondola.Id_Farmacia" class="form-control"
+															asp-items="@Model.Farmacias">
+														<option value="">-- Selecione Farmacia --</option>
+													</select>
+												</div>
+												<div class="col-md-12" style="margin-top:15px;">
+													<label class="control-label">Posição</label>
+													<select asp-for="gondola.Id_Posicao" class="form-control"
+															asp-items="@Model.Posicoes">
+														<option value="">-- Selecione Posicao --</option>
+													</select>
+												</div>
+												<div class="col-md-12" style="margin-top:15px;">
+													<label asp-for="gondola.Altura" style="font-weight:bold;">Altura metro(s)</label>
+													<input type='text' class='form-control' asp-for="gondola.Altura" />
+													<span class="alert-danger" asp-validation-for="gondola.Altura"></span>
+												</div>
+												<div class="col-md-12" style="margin-top:15px;">
+													<label asp-for="gondola.Largura" style="font-weight:bold;">Largura metro(s)</label>
+													<input type='text' class='form-control' asp-for="gondola.Largura" />
+													<span class="alert-danger" asp-validation-for="gondola.Largura"></span>
+												</div>
+												<div class="text-center col-md-12" style="margin-top:35px;">
+													<button class="btn btn-primary btn-sx" type="submit">
+														<i class="glyphicon glyphicon-plus"></i> Adicionar Gondola
+													</button>
+													<a class="btn btn-success btn-sx" asp-page="/Gondolas/Index">
+														<i class="glyphicon glyphicon-backward"></i> Lista de Gondolas
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

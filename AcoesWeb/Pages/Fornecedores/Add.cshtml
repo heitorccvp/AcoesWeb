@@ -1,0 +1,53 @@
+﻿@page
+@model AcoesWeb.Pages.Fornecedores.AddModel
+@{
+    ViewData["Title"] = "Adicionar um fornecedor";
+}
+
+<div>
+	<div>
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal-title"><strong>Novo Fornecedor</strong></h3>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-4 item_img img-responsive glyphicon glyphicon-shopping-cart">
+
+					</div>
+					<div class="col-md-8 item_content">
+						<form method="post">
+							<h4>
+								<span>Informe os dados do Fornecedor!!!</span>
+							</h4>
+							<div class="container">
+								<div class="row">
+									<div class="col-md-4">
+										<div class="panel">
+											<div class="panel-body">
+												<div class="col-md-12" style="margin-top:15px;">
+													<label asp-for="fornecedor.Nome" style="font-weight:bold;"></label>
+													<input type='text' class='form-control' asp-for="fornecedor.Nome" />
+													<span class="alert-danger" asp-validation-for="fornecedor.Nome"></span>
+												</div>
+												<div class="text-center col-md-12" style="margin-top:35px;">
+													<button class="btn btn-primary btn-sx" type="submit">
+														<i class="glyphicon glyphicon-plus"></i> Adicionar Fornecedor
+													</button>
+													<a class="btn btn-success btn-sx" asp-page="/Fornecedores/Index">
+														<i class="glyphicon glyphicon-backward"></i> Lista de Fornecedores
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

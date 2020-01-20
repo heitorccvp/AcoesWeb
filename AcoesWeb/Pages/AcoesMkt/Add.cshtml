@@ -1,0 +1,117 @@
+﻿@page
+@model AcoesWeb.Pages.AcoesMkt.AddModel
+@{
+    ViewData["Title"] = "Adicionar Ação";
+}
+
+<div>
+	<div>
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal-title"><strong>Nova Ação</strong></h3>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-4 item_img img-responsive glyphicon glyphicon-shopping-cart">
+
+					</div>
+					<div class="col-md-8 item_content">
+						<form method="post">
+							<h4>
+								<span>Informe os dados da Ação!!!</span>
+							</h4>
+							<div class="container">
+								<div class="row">
+									<div class="col-md-4">
+										<div class="panel">
+											<div class="panel-body">
+												<div class="col-md-12" style="margin-top:15px;">
+													<label asp-for="acoesMkt.Nome" style="font-weight:bold;"></label>
+													<input type='text' class='form-control' asp-for="acoesMkt.Nome" />
+													<span class="alert-danger" asp-validation-for="acoesMkt.Nome"></span>
+												</div>
+
+												<div class="col-md-12" style="margin-top:15px;">
+													<label asp-for="acoesMkt.Valor" style="font-weight:bold;"></label>
+													<input type="number" class='form-control' asp-for="acoesMkt.Valor" />
+													<span class="alert-danger" asp-validation-for="acoesMkt.Valor"></span>
+												</div>
+
+												<div class="col-md-12" style="margin-top:15px;">
+													<label class="control-label">Associados</label>
+													<select asp-for="acoesMkt.Id_Associado" class="form-control"
+															asp-items="@Model.Associados">
+														<option value="">-- Selecione Associado --</option>
+													</select>
+												</div>
+
+												<div class="col-md-12" style="margin-top:15px;">
+													<label class="control-label">Farmacia</label>
+													<select asp-for="acoesMkt.Id_Farmacia" class="form-control"
+															asp-items="@Model.Farmacias">
+														<option value="">-- Selecione Farmacia --</option>
+													</select>
+												</div>
+
+												<div class="col-md-12" style="margin-top:15px;">
+													<label class="control-label">Gondola</label>
+													<select asp-for="acoesMkt.Id_Gondola" class="form-control"
+															asp-items="@Model.Gondolas">
+														<option value="">-- Selecione Gondola --</option>
+													</select>
+												</div>
+
+												<div class="col-md-12" style="margin-top:15px;">
+													<label class="control-label">Parte</label>
+													<select asp-for="acoesMkt.Id_Partes" class="form-control"
+															asp-items="@Model.Partes">
+														<option value="">-- Selecione Parte --</option>
+													</select>
+												</div>
+
+												<div class="col-md-12" style="margin-top:15px;">
+													<label class="control-label">Fornecedor</label>
+													<select asp-for="acoesMkt.Id_Fornecedor" class="form-control"
+															asp-items="@Model.Fornecedores">
+														<option value="">-- Selecione Fornecedor --</option>
+													</select>
+												</div>
+
+												<div class="col-md-12" style="margin-top:15px;">
+													<label class="control-label">Status</label>
+													<select asp-for="acoesMkt.Id_Status" class="form-control"
+															asp-items="@Model.Status">
+														<option value="">-- Selecione Status --</option>
+													</select>
+												</div>
+
+												<div class="col-md-12" style="margin-top:15px;">
+													<label class="control-label">Aprovador</label>
+													<select asp-for="acoesMkt.Id_Aprovador" class="form-control"
+															asp-items="@Model.Aprovadores">
+														<option value="">-- Selecione Aprovador --</option>
+													</select>
+												</div>
+
+
+												<div class="text-center col-md-12" style="margin-top:35px;">
+													<button class="btn btn-primary btn-sx" type="submit">
+														<i class="glyphicon glyphicon-plus"></i> Adicionar Ação
+													</button>
+													<a class="btn btn-success btn-sx" asp-page="/AcoesMkt/Index">
+														<i class="glyphicon glyphicon-backward"></i> Lista de Ações
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

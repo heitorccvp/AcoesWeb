@@ -1,0 +1,81 @@
+﻿@page
+@model AcoesWeb.Pages.Partes.AddModel
+@{
+    ViewData["Title"] = "Adicionar Parte";
+}
+
+
+<div>
+	<div>
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal-title"><strong>Nova Parte</strong></h3>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-4 item_img img-responsive glyphicon glyphicon-shopping-cart">
+
+					</div>
+					<div class="col-md-8 item_content">
+						<form method="post">
+							<h4>
+								<span>Informe os dados da Parte!!!</span>
+							</h4>
+							<div class="container">
+								<div class="row">
+									<div class="col-md-4">
+										<div class="panel">
+											<div class="panel-body">
+												<div class="col-md-12" style="margin-top:15px;">
+													<label asp-for="parte.nome" style="font-weight:bold;"></label>
+													<input type='text' class='form-control' asp-for="parte.nome" />
+													<span class="alert-danger" asp-validation-for="parte.nome"></span>
+												</div>
+												<div class="col-md-12" style="margin-top:15px;">
+													<label asp-for="parte.Altura" style="font-weight:bold;">Altura metro(s)</label>
+													<input type='text' class='form-control' asp-for="parte.Altura" />
+													<span class="alert-danger" asp-validation-for="parte.Altura"></span>
+												</div>
+												<div class="col-md-12" style="margin-top:15px;">
+													<label asp-for="parte.Largura" style="font-weight:bold;">Largura metro(s)</label>
+													<input type='text' class='form-control' asp-for="parte.Largura" />
+													<span class="alert-danger" asp-validation-for="parte.Largura"></span>
+												</div>
+
+												<div class="col-md-12" style="margin-top:15px;">
+													<label class="control-label">Gondola</label>
+													<select asp-for="parte.Id_Gondola" class="form-control"
+															asp-items="@Model.Gondolas">
+														<option value="">-- Selecione Gondola --</option>
+													</select>
+												</div>
+
+												<div class="col-md-12" style="margin-top:15px;">
+													<label class="control-label">Posição</label>
+													<select asp-for="parte.Id_Posicao" class="form-control"
+															asp-items="@Model.Posicoes">
+														<option value="">-- Selecione Posição --</option>
+													</select>
+												</div>
+
+												<div class="text-center col-md-12" style="margin-top:35px;">
+													<button class="btn btn-primary btn-sx" type="submit">
+														<i class="glyphicon glyphicon-plus"></i> Adicionar Parte
+													</button>
+													<a class="btn btn-success btn-sx" asp-page="/Partes/Index">
+														<i class="glyphicon glyphicon-backward"></i> Lista de Partes
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

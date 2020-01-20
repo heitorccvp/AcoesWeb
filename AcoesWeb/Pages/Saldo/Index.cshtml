@@ -1,0 +1,152 @@
+﻿@page
+@model AcoesWeb.Pages.Saldo.IndexModel
+@{
+	ViewData["Title"] = "Saldo";
+}
+
+<script>
+    function macFunction(x) {
+        $("#item_view").modal();
+	};
+
+	$(document).ready(function () {
+        $("#success-alert").hide();
+        $("#success-alert").fadeTo(2000, 500).slideUp(500, function () {
+            $("#success-alert").slideUp(500);
+        });
+	});
+
+</script>
+<div class="container">
+	<div class="mail-box">
+		<aside class="lg-side">
+			<div class="inbox-head">
+				<h3>Saldos</h3>
+			</div>
+			
+			<br />
+			@{
+				if (!string.IsNullOrEmpty(Model.Message))
+				{
+					<div class="alert alert-success" id="success-alert" style="margin-top: 40px;">
+						<button type="button" class="close" data-dismiss="alert">x</button>
+						<strong>@Model.Message ! </strong>
+					</div>
+				}
+			}
+			<div class="inbox-body" style="margin-top:20px;">
+				<div class="mail-option">
+
+					<table class="table table-inbox table-hover" style="border:2px solid black;">
+						<thead>
+							<tr class="unread">
+								<th class="col-sm-2 view-message  dont-show">ID</th>
+								<th class="view-message col-sm-1">Ação</th>
+								<th class="view-message col-sm-1">Associado</th>
+								<th class="view-message col-sm-1">Farmacia</th>
+								<th class="view-message col-sm-1">Fornecedor</th>
+								<th class="view-message col-sm-1">Valor</th>
+								<th class="view-message col-sm-1">Status</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							@foreach (var item in Model.listaSaldoPago)
+							{
+								<tr>
+									<td onclick="macFunction(this)" class="view-message">
+										<h5>@item.acaoNome</h5>
+									</td>
+
+									<td onclick="macFunction(this)" class="view-message">
+										<h5>@item.associoadosNome</h5>
+									</td>
+
+									<td onclick="macFunction(this)" class="view-message">
+										<h5>@item.farmaciasNome</h5>
+									</td>
+
+									<td onclick="macFunction(this)" class="view-message">
+										<h5>@item.fornecedoresNome</h5>
+									</td>
+
+									<td onclick="macFunction(this)">
+										<h4 style="margin-top: 5px;">
+											<span class="label label-success ">@item.valor</span>
+										</h4>
+									</td>
+
+									<td onclick="macFunction(this)" class="view-message">
+										<h5>@item.nomeStatus</h5>
+									</td>
+
+									<td onclick="macFunction(this)">
+										<h4 style="margin-top: 5px;">
+											<span class="label label-warning ">@item.dataPagamento</span>
+										</h4>
+									</td>
+								</tr>
+							}
+						</tbody>
+					</table>
+
+					<table class="table table-inbox table-hover" style="border:2px solid black;">
+						<thead>
+							<tr class="unread">
+								<th class="col-sm-2 view-message  dont-show">ID</th>
+								<th class="view-message col-sm-1">Ação</th>
+								<th class="view-message col-sm-1">Associado</th>
+								<th class="view-message col-sm-1">Farmacia</th>
+								<th class="view-message col-sm-1">Fornecedor</th>
+								<th class="view-message col-sm-1">Valor</th>
+								<th class="view-message col-sm-1">Status</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							@foreach (var item in Model.listaSaldoPendente)
+							{
+								<tr>
+									<td onclick="macFunction(this)" class="view-message">
+										<h5>@item.acaoNome</h5>
+									</td>
+
+									<td onclick="macFunction(this)" class="view-message">
+										<h5>@item.associoadosNome</h5>
+									</td>
+
+									<td onclick="macFunction(this)" class="view-message">
+										<h5>@item.farmaciasNome</h5>
+									</td>
+
+									<td onclick="macFunction(this)" class="view-message">
+										<h5>@item.fornecedoresNome</h5>
+									</td>
+
+									<td onclick="macFunction(this)">
+										<h4 style="margin-top: 5px;">
+											<span class="label label-warning ">@item.valor</span>
+										</h4>
+									</td>
+
+									<td onclick="macFunction(this)" class="view-message">
+										<h5>@item.nomeStatus</h5>
+									</td>
+
+									<td onclick="macFunction(this)">
+										<h4 style="margin-top: 5px;">
+											<span class="label label-warning ">@item.dataPagamento</span>
+										</h4>
+									</td>
+								</tr>
+							}
+						</tbody>
+					</table>
+
+
+				</div>
+			</div>
+		</aside>
+	</div>
+</div>
+
